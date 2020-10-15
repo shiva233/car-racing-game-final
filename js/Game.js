@@ -75,6 +75,9 @@ class Game {
           cars[index - 1].shapeColor = "red";
           camera.position.x = displayWidth/2;
           camera.position.y = cars[index-1].y
+          stroke(20)
+          fill("red")
+          ellipse(x,y,90,90);
         }
        
         //textSize(15);
