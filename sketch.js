@@ -37,6 +37,8 @@ function setup(){
 
 
 function draw(){
+  background(255)
+ 
   if(playerCount === 4){
     game.update(1);
   }
@@ -51,4 +53,6 @@ function draw(){
     game.End();
 
   }
+
+  
 }

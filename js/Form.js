@@ -44,6 +44,8 @@ class Form {
 
       Player.deletePlayers()
 
+      Player.deleteRank()
+
       
       
 

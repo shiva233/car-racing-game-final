@@ -48,6 +48,7 @@ class Game {
     form.hide();
 
     Player.getPlayerInfo();
+    player.getCarsRank();
     
     if(allPlayers !== undefined){
       //var display_position = 100;
@@ -84,14 +85,23 @@ class Game {
         //text(allPlayers[plr].name + ": " + allPlayers[plr].distance, 120,display_position)
 
 
-        if(player.distance === 5180 ){
+        if(player.distance >= 5500 ){
+          
+          text("Rank:" + player.rank,displayWidth/2,y-150)
+          console.log(player.rank)
+
+        }
+        if(player.distance === 5500){
 
 
           gameState = 2
+          player.rank = player.rank + 1
+          Player.updateCarsAtEnd(player.rank)
+
 
         }
       }
-
+      
     }
 
     if(keyIsDown(UP_ARROW) && player.index !== null){
@@ -99,15 +109,22 @@ class Game {
       player.update();
     }
 
+    
     drawSprites();
+    fill("red")
+    
+
   }
 
   End(){
 
 
-    alert("GAME OVER")
+    console.log("GAME OVER")
 
-    game.update(2)
+   // game.update(2)
+
+    console.log(player.rank)
+   
 
 
 
