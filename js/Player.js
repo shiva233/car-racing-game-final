@@ -73,7 +73,7 @@ class Player {
 
   static deleteRank(){
 
-    database.ref('playersAtEnd').set('')
+    database.ref('playersAtEnd').set(0)
 
   }
 }

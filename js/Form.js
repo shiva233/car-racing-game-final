@@ -44,9 +44,9 @@ class Form {
 
       Player.deletePlayers()
 
-      Player.deleteRank()
-
       
+      Player.updateCarsAtEnd(0)
+
       
 
 

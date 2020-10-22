@@ -85,25 +85,19 @@ class Game {
         //text(allPlayers[plr].name + ": " + allPlayers[plr].distance, 120,display_position)
 
 
-        if(player.distance >= 5500 ){
-          
-          text("Rank:" + player.rank,displayWidth/2,y-150)
-          console.log(player.rank)
 
-        }
-        if(player.distance === 5500){
-
-
-          gameState = 2
-          player.rank = player.rank + 1
-          Player.updateCarsAtEnd(player.rank)
-
-
-        }
       }
       
     }
+    if(player.distance > 5500 ){
+        gameState = 2
+      player.rank += 1
+      Player.updateCarsAtEnd(player.rank)
+      text("Rank:" + player.rank,displayWidth/2,y-150)
+      console.log(player.rank)
 
+    }
+    
     if(keyIsDown(UP_ARROW) && player.index !== null){
       player.distance +=10
       player.update();
@@ -117,6 +111,8 @@ class Game {
   }
 
   End(){
+
+    
 
 
     console.log("GAME OVER")
